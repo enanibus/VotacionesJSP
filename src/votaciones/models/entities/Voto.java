@@ -4,18 +4,20 @@ public class Voto {
 	private int idVoto;
 	private String ipCliente;
 	private Respuesta respVoto;
-	
-    public Voto() {
-        
-    }
-    
-    public Voto(int idVoto, String ipCliente, Respuesta respVoto) {
-        this.idVoto = idVoto;
-        this.ipCliente = ipCliente;
-        this.respVoto = respVoto;
-    }
+
+	public Voto() {
+
+	}
+
+	public Voto(int idVoto, String ipCliente, Respuesta respVoto) {
+		super();
+		this.idVoto = idVoto;
+		this.ipCliente = ipCliente;
+		this.respVoto = respVoto;
+	}
 
 	public int getIdVoto() {
+		
 		return idVoto;
 	}
 
@@ -44,5 +46,5 @@ public class Voto {
 		return "Voto [idVoto=" + idVoto + ", ipCliente=" + ipCliente
 				+ ", respVoto=" + respVoto + "]";
 	}
-	
+
 }

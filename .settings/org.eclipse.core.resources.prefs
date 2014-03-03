@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/index.html=UTF-8
-encoding//WebContent/home.html=UTF-8
+encoding//WebContent/index.html=UTF-8
+encoding//src/votaciones/controllers/beans/VotarBean.java=UTF-8
 encoding/<project>=UTF-8

@@ -13,7 +13,7 @@
 	<h1>Error</h1>
 	<sql:setDataSource driver="com.mysql.jdbc.Driver"
 		url="jdbc:mysql://localhost:3306/miw18" user="miw18" password="288287169" />
-	<sql:query var="logs">SELECT * FROM log</sql:query>
+	<sql:query var="logs">SELECT * FROM Log</sql:query>
 	<table border="1px">
 		<caption>Logs:</caption>
 		<c:forEach var="row" items="${logs.rows}">

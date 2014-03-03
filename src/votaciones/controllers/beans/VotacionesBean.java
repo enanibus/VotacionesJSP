@@ -1,59 +1,21 @@
 package votaciones.controllers.beans;
 
-import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
-import upm.miw.solitaire.controllers.ejb.LoginEjb;
-import upm.miw.solitaire.models.entities.Gender;
-import upm.miw.solitaire.models.entities.User;
+import votaciones.controllers.ejb.VotacionesEjb;
+import votaciones.models.entities.Voto;
 
 public class VotacionesBean extends Bean {
 
-    private String password;
-
-    private User user;
+    private ArrayList<Voto> resultado;
 
     public VotacionesBean() {
     }
 
-    public Gender[] getGenders() {
-        return Gender.values();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String login(HttpSession sesion) {
-        LoginEjb eaE = new LoginEjb();
-        String result = "login";
-
-        User usr = eaE.login(this.getUser().getNick(), password);
-        if (usr != null) {
-            sesion.setAttribute("user", usr);
-            Logger.getLogger(VotacionesBean.class).info("entrar correcto: " + usr.getNick());
-            result = "home";
-        } else {
-            this.addFieldError("Usuario o contraseña incorrectos");
-        }
-        return result;
-    }
-
-    public String register() {
-        LoginEjb eaE = new LoginEjb();
+    public ArrayList<Voto> verResultados() {
+        VotarEjb eaE = new VotarEjb();
         String result = "register";
 
         if (!password.equals(user.getPassword())) {
