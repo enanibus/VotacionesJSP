@@ -12,7 +12,8 @@
 <body>
 	<h1>Votaciones</h1>
 	<h2>Ver Votaciones</h2>
-	<c:set var="bean" scope="request" value="${votacionesB}" />
+	<c:set var="bean" scope="request" value="${votacionesBean}" />
+	<p>Votaciones: ${bean.votaciones}</p>
 	
 <%-- 	<sql:setDataSource driver="com.mysql.jdbc.Driver" --%>
 <%-- 		url="jdbc:mysql://localhost:3306/miw18" user="miw18" password="288287169" /> --%>
@@ -24,7 +25,7 @@
 				<th>IP CLIENTE</th>
 				<th>RESULTADO</th>
 			</tr>
-		<c:forEach var="row" items="${bean.rows}">
+		<c:forEach var="row" items="${bean.votaciones.voto}">
 			<tr>
 				<td><c:out value="${row.idVoto}" /></td>
 				<td><c:out value="${row.ipCliente}" /></td>

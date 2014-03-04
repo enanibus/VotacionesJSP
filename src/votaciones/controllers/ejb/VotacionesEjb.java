@@ -1,27 +1,23 @@
 package votaciones.controllers.ejb;
 
+import java.util.List;
+
+import com.sun.istack.internal.logging.Logger;
+
 import votaciones.models.dao.DAOFactory;
 import votaciones.models.dao.VotoDAO;
 import votaciones.models.entities.Voto;
 
 public class VotacionesEjb {
 
-	private Voto v;
-
 	/**
-	 * @param voto
-	 * @return void si se puede crear el voto, excepcion si no puede ser creado
+	 * @param
+	 * @return devuelve la lista con los votos realizados
 	 */
-	public boolean votar(Voto voto) {
+	public static List<Voto> votaciones() {
 		VotoDAO votoDAO = DAOFactory.getFactory().getVotoDAO();
-		 v = votoDAO.read(voto.getIdVoto());
-		
-        if (v == null) {
-            votoDAO.create(voto);
-            return true;
-        }
-        return false;
-
+		Logger.getLogger(VotacionesEjb.class).info(votoDAO.findAll().toString());
+		return votoDAO.findAll();
 	}
 
 }

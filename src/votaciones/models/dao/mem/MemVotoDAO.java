@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import org.apache.log4j.Logger;
 
+import votaciones.models.entities.Respuesta;
 import votaciones.models.entities.Voto;
 import votaciones.models.dao.VotoDAO;
 
@@ -13,9 +14,9 @@ public class MemVotoDAO extends MemGenericDAO<Voto, Integer> implements VotoDAO 
 	private int idVoto = (Year*1000 + julianDay) * 1000;
 
     public MemVotoDAO() {
-//        Voto voto = new Voto(this.idVoto, "192.168.1.1", Respuesta.NO);
-//        this.create(voto);
-//        this.create(new Voto(this.idVoto+1, "192.168.1.1", Respuesta.SI));
+        Voto voto = new Voto(this.idVoto, "192.168.1.1", Respuesta.NO);
+        this.create(voto);
+        this.create(new Voto(this.idVoto+1, "192.168.1.1", Respuesta.SI));
     }
 
     @Override

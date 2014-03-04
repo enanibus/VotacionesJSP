@@ -1,34 +1,24 @@
 package votaciones.controllers.beans;
 
-import java.util.ArrayList;
-
-import org.apache.log4j.Logger;
+import java.util.List;
 
 import votaciones.controllers.ejb.VotacionesEjb;
 import votaciones.models.entities.Voto;
 
 public class VotacionesBean extends Bean {
 
-    private ArrayList<Voto> resultado;
+	private List<Voto> votaciones;
 
-    public VotacionesBean() {
-    }
+	public VotacionesBean() {
+	}
 
-    public ArrayList<Voto> verResultados() {
-        VotarEjb eaE = new VotarEjb();
-        String result = "register";
+	public List<Voto> getVotaciones() {
+		VotacionesEjb vEjb = new VotacionesEjb();
+		votaciones = vEjb.votaciones();
+		return votaciones;
+	}
 
-        if (!password.equals(user.getPassword())) {
-            this.addFieldError("Las contraseñas no coinciden");
-        } else if (password.length() < 8) {
-            this.addFieldError("Las contraseñas debe ser de 8 o mas caracteres");
-        } else if (!eaE.register(user)) {
-            this.addFieldError("Nick ocupado");
-        } else {
-            Logger.getLogger(VotacionesBean.class).info(
-                    "registrar correcto: " + user.getNick());
-            result = "login";
-        }
-        return result;
-    }
+	public void setVotaciones(List<Voto> votaciones) {
+	}
+
 }

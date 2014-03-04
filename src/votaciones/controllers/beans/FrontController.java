@@ -26,17 +26,17 @@ public class FrontController extends HttpServlet {
         String action = request.getParameter("action");
         String view = "error";
 
-        if (action == null || action.equals("home"))
+        if (action == null || action.equals("home")) {
             view = "home";
-
-        else if (action.equals("votar") | action.equals("votaciones")) {
+        }
+        else if (action.equals("votar")) {
             Voto voto = new Voto();
             VotarBean votarB = new VotarBean();
             votarB.setVoto(voto);
             request.setAttribute("votarB", votarB);
-            if (action.equals("votar"))
-                view = "votar";
-            else if (action.equals("votaciones"))
+            view = "votar";
+        }
+        else if (action.equals("votaciones")) {
                 view = "votaciones";
         }
         getServletContext().getRequestDispatcher("/" + view + ".jsp").forward(request, response);
