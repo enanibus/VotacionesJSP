@@ -40,7 +40,7 @@ public class VotarBean extends Bean {
 			this.addFieldError("Error en el proceso de votación");
 		} else {
 			Logger.getLogger(VotarBean.class).info(
-					"voto realizado correctamente");
+					"voto realizado correctamente: " + voto.toString() );
 		}
 		return result;
 	}

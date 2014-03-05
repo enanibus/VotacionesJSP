@@ -9,8 +9,8 @@
 <title>Votar</title>
 </head>
 <body>
-    <h1>Votaciones</h1>
-    <h2>Votar</h2>
+	<h1>Votaciones</h1>
+	<h2>Votar</h2>
 	<c:set var="bean" scope="request" value="${votarB}" />
 	<form action="votar" method="post">
 		<input type="hidden" name="action" value="votar" />
@@ -18,11 +18,19 @@
 			<p>Errores: ${bean.errors}</p>
 		</c:if>
 		<p>Pregunta: ${bean.pregunta}</p>
-        <p>Elige tu respuesta: <select name="respuesta" size="1">
-            <c:forEach var="xxx" items="${bean.respuestas}"><option value="${xxx}">${xxx}</option></c:forEach>
-        </select></p>
-		<p><input type="reset" /><input type="submit" value="Votar" /></p>
+		<p>
+			Elige tu respuesta: <select name="respuesta" size="1">
+				<c:forEach var="xxx" items="${bean.respuestas}">
+					<option value="${xxx}">${xxx}</option>
+				</c:forEach>
+			</select>
+		</p>
+		<p>
+			<input type="submit" value="Votar" />
+		</p>
 	</form>
-	<p><a href="?action=home">Home</a></p>
+	<p>
+		<a href="?action=home">Home</a>
+	</p>
 </body>
 </html>

@@ -13,8 +13,7 @@ public class VotacionesBean extends Bean {
 	}
 
 	public List<Voto> getVotaciones() {
-		VotacionesEjb vEjb = new VotacionesEjb();
-		votaciones = vEjb.votaciones();
+		votaciones = VotacionesEjb.votaciones();
 		return votaciones;
 	}
 

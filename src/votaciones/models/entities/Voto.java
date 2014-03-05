@@ -17,7 +17,7 @@ public class Voto {
 	}
 
 	public int getIdVoto() {
-		
+
 		return idVoto;
 	}
 
