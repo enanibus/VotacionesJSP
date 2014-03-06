@@ -2,7 +2,6 @@ package votaciones.models.dao;
 
 import org.apache.log4j.Logger;
 
-//import votaciones.models.dao.jdbc.JDBCDAOFactory;
 import votaciones.models.dao.mem.MemDAOFactory;
 
 public abstract class DAOFactory {
@@ -15,7 +14,6 @@ public abstract class DAOFactory {
     public static DAOFactory getFactory() {
         if (factory == null) {
             factory = new MemDAOFactory();
-//            factory = new JDBCDAOFactory();
             Logger.getLogger(DAOFactory.class).info(
                     "DAOFactory: " + factory.getClass().getSimpleName());
         }
