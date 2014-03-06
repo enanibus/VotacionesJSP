@@ -1,7 +1,6 @@
 package votaciones.controllers.beans;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,9 +32,8 @@ public class FrontController extends HttpServlet {
 			request.setAttribute("votarB", votarB);
 			view = "votar";
 		} else if (action.equals("votaciones")) {
-			List<Voto> votaciones = null;
 			VotacionesBean votacionesB = new VotacionesBean();
-			votacionesB.setVotaciones(votaciones);
+			votacionesB.setVotaciones(null);
 			request.setAttribute("votacionesB", votacionesB);
 			view = "votaciones";
 		}

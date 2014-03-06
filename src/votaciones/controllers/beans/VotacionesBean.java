@@ -7,14 +7,11 @@ import votaciones.models.entities.Voto;
 
 public class VotacionesBean extends Bean {
 
-	private List<Voto> votaciones;
-
 	public VotacionesBean() {
 	}
 
 	public List<Voto> getVotaciones() {
-		votaciones = VotacionesEjb.votaciones();
-		return votaciones;
+		return VotacionesEjb.votaciones();
 	}
 
 	public void setVotaciones(List<Voto> votaciones) {

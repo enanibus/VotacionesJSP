@@ -78,6 +78,8 @@ public class JDBCVotoDAO extends JDBCGenericDAO<Voto, Integer> implements VotoDA
 
     public static void main(String[] args) {
         JDBCVotoDAO dao = new JDBCVotoDAO();
+        Logger.getLogger(JDBCVotoDAO.class).info(
+                "JDBCVotoDAO: " + "creación de la tabla Voto");
         dao.createTable();
 		Voto voto = new Voto(1, "192.168.1.1", Respuesta.NO);
 		dao.create(voto);
